@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-transform-modules-systemjs": "^7.25.9",
     "@coreui/chartjs": "^4.0.0",
     "@coreui/coreui": "^5.1.2",
     "@coreui/icons": "^3.0.1",
@@ -59,6 +60,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.25.9",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.0",
