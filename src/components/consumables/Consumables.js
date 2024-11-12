@@ -67,24 +67,27 @@ const Consumables = () => {
     setCurrentPage(pageNumber);
   };
   const translations = {
-    name: "nombre",
+    label: "nombre",
     provider: "proveedor",
     brand: "marca",
     quantity: "cantidad",
     price: "precio",
     stock: "stock",
     expirationDate: "fecha de expiración",
-    status:"status"
+    status: "status",
   };
-  const getStatus =(item)=>{
-      if(item.stock < item.minimumQuantity ){
-                    
-        return <CButton color="danger"> {item.stock === 0 ? 'Agotado' : 'Insuficiente'} </CButton>
-    }else{
-                return <CButton color="success">Disponible</CButton>
-                
-            }
-  }
+  const getStatus = (item) => {
+    if (item.stock < item.minimumQuantity) {
+      return (
+        <CButton color="danger">
+          {" "}
+          {item.stock === 0 ? "Agotado" : "Insuficiente"}{" "}
+        </CButton>
+      );
+    } else {
+      return <CButton color="success">Disponible</CButton>;
+    }
+  };
 
   return (
     <CCard>
@@ -99,14 +102,14 @@ const Consumables = () => {
         <CTableHead className="text-nowrap">
           <CTableRow>
             {[
-              "name",
+              "label",
               "provider",
               "brand",
               "quantity",
               "price",
               "stock",
               "expirationDate",
-              "status"
+              "status",
             ].map((header, index) => (
               <CTableHeaderCell
                 key={index}
@@ -129,7 +132,7 @@ const Consumables = () => {
           {currentItems.map((item, index) => (
             <CTableRow key={index}>
               <CTableDataCell className="text-center">
-                {item.name}
+                {item.label}
               </CTableDataCell>
               <CTableDataCell className="text-center">
                 {item.provider}

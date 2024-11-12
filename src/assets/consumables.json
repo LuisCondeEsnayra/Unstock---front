@@ -1,6 +1,7 @@
 [
   {
-    "name": "Fresas",
+    "label": "Fresas",
+    "name": "fresas",
     "price": 50,
     "quantity": 15,
     "stock": 100,
@@ -10,7 +11,8 @@
     "minimumQuantity": 1
   },
   {
-    "name": "BlueBerrys",
+    "label": "BlueBerrys",
+    "name": "blueberrys",
     "price": 60,
     "quantity": 25,
     "stock": 200,
@@ -20,7 +22,8 @@
     "minimumQuantity": 1
   },
   {
-    "name": "Plátano",
+    "label": "Plátano",
+    "name": "platano",
     "price": 20,
     "quantity": 5,
     "stock": 0,
@@ -30,7 +33,8 @@
     "minimumQuantity": 1
   },
   {
-    "name": "Azúcar Glass",
+    "label": "Azúcar Glass",
+    "name": "azucar_glass",
     "price": 45,
     "quantity": 1000,
     "stock": 5000,
@@ -40,7 +44,8 @@
     "minimumQuantity": 5
   },
   {
-    "name": "Harina",
+    "label": "Harina",
+    "name": "harina",
     "brand": "San Antonio",
     "price": 109,
     "quantity": 4000,
@@ -51,7 +56,8 @@
     "minimumQuantity": 100
   },
   {
-    "name": "Sal",
+    "label": "Sal",
+    "name": "sal",
     "brand": "Cisne",
     "price": 20,
     "quantity": 1000,
@@ -62,8 +68,9 @@
     "minimumQuantity": 5
   },
   {
-    "name": "Bicarbonato de sodio",
-    "brand": "Armo & Hammer",
+    "label": "Bicarbonato de sodio",
+    "name": "bicarbonato_de_sodio",
+    "brand": "Arm & Hammer",
     "price": 30,
     "quantity": 227,
     "stock": 1000,
@@ -73,7 +80,8 @@
     "minimumQuantity": 10
   },
   {
-    "name": "Azúcar estándar",
+    "label": "Azúcar estándar",
+    "name": "azucar_estandar",
     "brand": "Aurrera",
     "price": 30,
     "quantity": 900,
@@ -84,7 +92,8 @@
     "minimumQuantity": 50
   },
   {
-    "name": "Polvo para Hornear",
+    "label": "Polvo para Hornear",
+    "name": "polvo_para_hornear",
     "brand": "Rexal",
     "price": 15,
     "quantity": 100,
@@ -95,7 +104,8 @@
     "minimumQuantity": 10
   },
   {
-    "name": "Huevo",
+    "label": "Huevo",
+    "name": "huevo",
     "brand": "San Juan",
     "price": 90,
     "quantity": 30,
@@ -106,7 +116,8 @@
     "minimumQuantity": 1
   },
   {
-    "name": "Mantequilla",
+    "label": "Mantequilla",
+    "name": "mantequilla",
     "brand": "Kirkland",
     "price": 330,
     "quantity": 1812,
@@ -117,7 +128,8 @@
     "minimumQuantity": 100
   },
   {
-    "name": "Extracto de Vainilla",
+    "label": "Extracto de Vainilla",
+    "name": "extracto_de_vainilla",
     "brand": "Progourmet",
     "price": 165,
     "quantity": 500,
@@ -128,7 +140,8 @@
     "minimumQuantity": 10
   },
   {
-    "name": "Leche entera",
+    "label": "Leche entera",
+    "name": "leche_entera",
     "brand": "Kirkland",
     "price": 270,
     "quantity": 12000,
@@ -139,7 +152,8 @@
     "minimumQuantity": 1000
   },
   {
-    "name": "Agua",
+    "label": "Agua",
+    "name": "agua",
     "price": 15,
     "quantity": 20000,
     "stock": 50000,
@@ -149,7 +163,8 @@
     "minimumQuantity": 1000
   },
   {
-    "name": "Hielo",
+    "label": "Hielo",
+    "name": "hielo",
     "price": 35,
     "quantity": 5000,
     "stock": 10000,
@@ -159,7 +174,8 @@
     "minimumQuantity": 500
   },
   {
-    "name": "Flor de Jamaica",
+    "label": "Flor de Jamaica",
+    "name": "flor_de_jamaica",
     "brand": "Members Mark",
     "price": 286,
     "quantity": 1000,
@@ -170,7 +186,8 @@
     "minimumQuantity": 50
   },
   {
-    "name": "Nieve de Fresa",
+    "label": "Nieve de Fresa",
+    "name": "nieve_de_fresa",
     "brand": "Members Mark",
     "price": 204,
     "quantity": 4700,
@@ -181,7 +198,8 @@
     "minimumQuantity": 100
   },
   {
-    "name": "Crema Batida",
+    "label": "Crema Batida",
+    "name": "crema_batida",
     "brand": "Rich's",
     "price": 164,
     "quantity": 906,
@@ -192,7 +210,8 @@
     "minimumQuantity": 50
   },
   {
-    "name": "Syrup de Chocolate",
+    "label": "Syrup de Chocolate",
+    "name": "syrup_de_chocolate",
     "brand": "Hershey's",
     "price": 162,
     "quantity": 1767,
@@ -203,7 +222,8 @@
     "minimumQuantity": 50
   },
   {
-    "name": "Cerezas",
+    "label": "Cerezas",
+    "name": "cerezas",
     "brand": "Members Mark",
     "price": 210,
     "quantity": 100,
@@ -214,7 +234,8 @@
     "minimumQuantity": 10
   },
   {
-    "name": "Popotes",
+    "label": "Popotes",
+    "name": "popotes",
     "brand": "Primo",
     "price": 343,
     "quantity": 500,
@@ -225,7 +246,8 @@
     "minimumQuantity": 1
   },
   {
-    "name": "Queso Monterrey Jack",
+    "label": "Queso Monterrey Jack",
+    "name": "queso_monterrey_jack",
     "brand": "Kirkland",
     "price": 110,
     "quantity": 1000,
@@ -236,7 +258,8 @@
     "minimumQuantity": 100
   },
   {
-    "name": "Champiñones",
+    "label": "Champiñones",
+    "name": "champinones",
     "price": 37,
     "quantity": 10,
     "stock": 200,
@@ -246,7 +269,8 @@
     "minimumQuantity": 1
   },
   {
-    "name": "Pimienta",
+    "label": "Pimienta",
+    "name": "pimienta",
     "price": 27,
     "quantity": 50,
     "stock": 300,
@@ -256,7 +280,8 @@
     "minimumQuantity": 5
   },
   {
-    "name": "Cebollín",
+    "label": "Cebollín",
+    "name": "cebollin",
     "price": 20,
     "quantity": 10,
     "stock": 100,
@@ -266,7 +291,8 @@
     "minimumQuantity": 1
   },
   {
-    "name": "Pan de Caja",
+    "label": "Pan de Caja",
+    "name": "pan_de_caja",
     "brand": "Bimbo Artesano",
     "price": 47,
     "quantity": 14,

@@ -1,7 +1,9 @@
 .recipeImage { 
-    width: 200px;  
+    width: 150px;  
     object-fit: cover;  
-    height: 20vh; 
+    height: 25vh; 
+    max-height: 300px;
+    min-height:150px;
   }
    
   
