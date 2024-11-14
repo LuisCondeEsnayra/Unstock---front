@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Unstock---front/static/css/main.74a3db10.css",
-    "main.js": "/Unstock---front/static/js/main.f12d394d.js",
+    "main.js": "/Unstock---front/static/js/main.fcfb1916.js",
     "static/css/823.5592ff81.chunk.css": "/Unstock---front/static/css/823.5592ff81.chunk.css",
     "static/js/823.d76791f3.chunk.js": "/Unstock---front/static/js/823.d76791f3.chunk.js",
     "static/js/94.e8710619.chunk.js": "/Unstock---front/static/js/94.e8710619.chunk.js",
@@ -19,7 +19,7 @@
     "static/media/unstock.svg": "/Unstock---front/static/media/unstock.3211bd84950ecbaf2f3b461d08b3cafb.svg",
     "index.html": "/Unstock---front/index.html",
     "main.74a3db10.css.map": "/Unstock---front/static/css/main.74a3db10.css.map",
-    "main.f12d394d.js.map": "/Unstock---front/static/js/main.f12d394d.js.map",
+    "main.fcfb1916.js.map": "/Unstock---front/static/js/main.fcfb1916.js.map",
     "823.5592ff81.chunk.css.map": "/Unstock---front/static/css/823.5592ff81.chunk.css.map",
     "823.d76791f3.chunk.js.map": "/Unstock---front/static/js/823.d76791f3.chunk.js.map",
     "94.e8710619.chunk.js.map": "/Unstock---front/static/js/94.e8710619.chunk.js.map",
@@ -37,6 +37,6 @@
   },
   "entrypoints": [
     "static/css/main.74a3db10.css",
-    "static/js/main.f12d394d.js"
+    "static/js/main.fcfb1916.js"
   ]
 }
