@@ -10,19 +10,20 @@ import {
   CChartPolarArea,
   CChartRadar,
 } from '@coreui/react-chartjs' 
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => { 
-
-  const random = () => Math.round(Math.random() * 100)
-
+  const navigate = useNavigate();
+  const random = () => Math.round(Math.random() * 100) 
   return (
     <> 
     <Banner text="Dashboard"/> 
-    <CContainer>
+    <CContainer className="my-3">
       <CRow>
         <CCol>
-          <CButton color="light" > </CButton>
-        </CCol>
+          <CButton color="outline-light" className="mx-2" onClick={()=>{navigate("/recetas")}}>  Recetas </CButton> 
+        <CButton color="outline-light" className="mx-2" onClick={()=>{navigate("/insumos")}}>  Insumos  </CButton> 
+        </CCol>  
       </CRow>
     </CContainer>
     <CRow>
