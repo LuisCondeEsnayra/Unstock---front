@@ -1,11 +1,4 @@
-import {
-  CCardBody,
-  CRow,
-  CCol,
-  CButton,
-  CCardHeader,
-  CCardFooter,
-} from "@coreui/react";
+ 
 import classes from "./recipeCard.module.css";
 
 const RecipeCard = (props) => {

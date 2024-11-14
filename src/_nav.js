@@ -3,10 +3,9 @@ import CIcon from '@coreui/icons-react'
 import { 
   cilListRich,
   cilNotes, 
-  cilSpeedometer,
-  cilStar, 
+  cilSpeedometer, 
 } from '@coreui/icons'
-import { CNavGroup, CNavItem } from '@coreui/react'
+import { CNavItem } from '@coreui/react'
 
 const _nav = [
   {
