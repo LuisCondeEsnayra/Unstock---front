@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {
   CButton,
   CCard,
@@ -15,23 +15,29 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
+import { useDispatch } from 'react-redux'
+import { setAuthenticated } from '../../../store'
 
 const Login = () => {
   const [user, setUser] = useState("")
   const [password, setPassword] = useState("")
-  const navigate = useNavigate();
-  const handleUser =(ev)=>{
+  const navigate = useNavigate()
+  const dispatch= useDispatch()
+
+  const handleUser = (ev) => {
     setUser(ev.target.value);
   }  
-  const handlePassword =(ev)=>{
+  const handlePassword = (ev) => {
     setPassword(ev.target.value);
   }  
   
- const  handleSubmit=(ev)=>{
-    ev.preventDefault(); 
-    if(password === "test" && user.toLowerCase() === "alejandra"){
-      console.log(user,password)
-      navigate('/dashboard',{replace:true})
+  const handleSubmit = (ev) => {
+  
+    ev.preventDefault();
+    if (password === "utch" && user.toLowerCase() === "alejandra") { 
+      dispatch(setAuthenticated(true))
+      navigate("/", {replace:true})
+          
     }
   }
 
@@ -44,15 +50,18 @@ const Login = () => {
               <CCard className="p-4">
                 <CCardBody>
                   <CForm onSubmit={handleSubmit}>
-                    <h1>Login</h1>
-                    <p className="text-body-secondary">Sign In to your account</p>
+                    <h1>Inicio de sesión</h1>
+                    <p className="text-body-secondary">Inicia sesión en tu cuenta</p>
                     <CInputGroup className="mb-3">
                       <CInputGroupText>
                         <CIcon icon={cilUser} />
                       </CInputGroupText>
-                      <CFormInput placeholder="Username" autoComplete="username"
+                      <CFormInput
+                        placeholder="Usuario"
+                        autoComplete="username"
                         onChange={handleUser}
-                        value={user} />
+                        value={user}
+                      />
                     </CInputGroup>
                     <CInputGroup className="mb-4">
                       <CInputGroupText>
@@ -60,23 +69,18 @@ const Login = () => {
                       </CInputGroupText>
                       <CFormInput
                         type="password"
-                        placeholder="Password"
+                        placeholder="Contraseña"
                         autoComplete="current-password"
                         onChange={handlePassword}
                         value={password}
                       />
                     </CInputGroup>
                     <CRow>
-                      <CCol  >
+                      <CCol>
                         <CButton color="primary" className="px-4" type='submit'>
-                          Login
+                          Iniciar sesión
                         </CButton>
                       </CCol>
-                      {/* <CCol xs={6} className="text-right">
-                        <CButton color="link" className="px-0">
-                          Forgot password?
-                        </CButton>
-                      </CCol> */}
                     </CRow>
                   </CForm>
                 </CCardBody>
@@ -84,10 +88,10 @@ const Login = () => {
               <CCard className="text-white bg-primary py-5" style={{ width: '44%' }}>
                 <CCardBody className="text-center">
                   <div>
-                    <h2>Sign up</h2> 
+                    <h2>Registrarse</h2> 
                     <Link to="/register">
                       <CButton color="primary" className="mt-3" active tabIndex={-1}>
-                        Register Now!
+                        Registrate!
                       </CButton>
                     </Link>
                   </div>

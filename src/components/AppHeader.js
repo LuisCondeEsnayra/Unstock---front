@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import {
   CContainer,
@@ -13,6 +13,7 @@ import {
   CNavLink,
   CNavItem,
   useColorModes,
+  CButton,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import {
@@ -27,13 +28,17 @@ import {
 import { AppBreadcrumb } from './index'
 import { AppHeaderDropdown } from './header/index'
 import Cart from './cart/Cart'
+import { NavItem } from 'reactstrap'
+import { setAuthenticated } from '../store'
 
 const AppHeader = () => {
   const headerRef = useRef()
   const { colorMode, setColorMode } = useColorModes('coreui-free-react-admin-template-theme')
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const sidebarShow = useSelector((state) => state.sidebarShow)
+
 
   useEffect(() => {
     document.addEventListener('scroll', () => {
@@ -41,6 +46,11 @@ const AppHeader = () => {
         headerRef.current.classList.toggle('shadow-sm', document.documentElement.scrollTop > 0)
     })
   }, [])
+  
+  const handleLogout =()=>{
+    dispatch(setAuthenticated(false))
+    navigate("/login",{replace:true})
+  }
 
   return (
     <CHeader position="sticky" className="mb-4 p-0" ref={headerRef}>
@@ -126,7 +136,12 @@ const AppHeader = () => {
           <li className="nav-item py-1">
             <div className="vr h-100 mx-2 text-body text-opacity-75"></div>
           </li>
+          <CNavItem>
           <AppHeaderDropdown />
+          </CNavItem>
+          <CNavItem>
+          <CButton color="outline-light ms-3" onClick={handleLogout} >Salir</CButton>
+          </CNavItem>
         </CHeaderNav>
       </CContainer>
       <CContainer className="px-4" fluid>

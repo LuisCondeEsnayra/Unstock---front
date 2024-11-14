@@ -1,7 +1,7 @@
 import React from "react";  
 import Recepies from "../../components/recipes/Recipes.js";  
 import Banner from "../../components/Banner.js";
-import { CCard, CCardBody, CCol, CCardHeader, CRow } from '@coreui/react'
+import { CCard, CCardBody, CCol, CCardHeader, CRow, CContainer, CButton } from '@coreui/react'
 import {
   CChartBar,
   CChartDoughnut,
@@ -18,6 +18,13 @@ const Dashboard = () => {
   return (
     <> 
     <Banner text="Dashboard"/> 
+    <CContainer>
+      <CRow>
+        <CCol>
+          <CButton color="light" > </CButton>
+        </CCol>
+      </CRow>
+    </CContainer>
     <CRow>
       <CCol xs={12}> 
       </CCol>
