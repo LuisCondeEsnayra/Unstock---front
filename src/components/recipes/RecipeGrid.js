@@ -1,5 +1,5 @@
 import React from "react";
-import { CRow, CCol, CCard } from "@coreui/react";
+import { CRow, CCol } from "@coreui/react";
 import RecipeCard from "./RecipeCard";
 import classes from "./RecipesGrid.module.css";
 

@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import React from "react";
 import { CForm, CModal, CModalBody, CModalHeader, CContainer } from "@coreui/react";
 import ProductForm from "./ProductForm";
 import SearchableMultiSelect from "./SearchableMultiSelect";
 import consumablesData from "../../../assets/consumables.json"
 
 const RecipeModal = (props) => {
-  const [selectedItems, setSelectedItems] = useState([]);
+  // const [selectedItems, setSelectedItems] = useState([]);
 
   return (
     <CModal

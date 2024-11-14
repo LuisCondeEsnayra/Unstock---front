@@ -1,5 +1,4 @@
-import React from "react";  
-import Recepies from "../../components/recipes/Recipes.js";  
+import React from "react";   
 import Banner from "../../components/Banner.js";
 import { CCard, CCardBody, CCol, CCardHeader, CRow, CContainer, CButton } from '@coreui/react'
 import {

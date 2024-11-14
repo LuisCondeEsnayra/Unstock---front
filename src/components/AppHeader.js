@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+import React, { useEffect, useRef } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import {
   CContainer,
   CDropdown,
@@ -14,48 +14,51 @@ import {
   CNavItem,
   useColorModes,
   CButton,
-} from '@coreui/react'
-import CIcon from '@coreui/icons-react'
-import {
-  cilBell,
-  cilContrast,
-  cilEnvelopeOpen, 
+} from "@coreui/react";
+import CIcon from "@coreui/icons-react";
+import { 
+  cilContrast, 
   cilMenu,
   cilMoon,
   cilSun,
-} from '@coreui/icons'
+} from "@coreui/icons";
 
-import { AppBreadcrumb } from './index' 
-import Cart from './cart/Cart' 
-import { setAuthenticated } from '../store'
+import { AppBreadcrumb } from "./index";
+import Cart from "./cart/Cart";
+import { setAuthenticated, toggleSidebar } from "../store";
 
 const AppHeader = () => {
-  const headerRef = useRef()
-  const { colorMode, setColorMode } = useColorModes('coreui-free-react-admin-template-theme')
+  const headerRef = useRef();
+  const { colorMode, setColorMode } = useColorModes(
+    "coreui-free-react-admin-template-theme"
+  );
 
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const sidebarShow = useSelector((state) => state.sidebarShow)
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    document.addEventListener('scroll', () => {
+    document.addEventListener("scroll", () => {
       headerRef.current &&
-        headerRef.current.classList.toggle('shadow-sm', document.documentElement.scrollTop > 0)
-    })
-  }, [])
-  
-  const handleLogout =()=>{
-    dispatch(setAuthenticated(false))
-    navigate("/login",{replace:true})
-  }
+        headerRef.current.classList.toggle(
+          "shadow-sm",
+          document.documentElement.scrollTop > 0
+        );
+    });
+  }, []);
+
+  const handleLogout = () => {
+    dispatch(setAuthenticated(false));
+    navigate("/login", { replace: true });
+  };
 
   return (
     <CHeader position="sticky" className="mb-4 p-0" ref={headerRef}>
       <CContainer className="border-bottom px-4" fluid>
         <CHeaderToggler
-          onClick={() => dispatch({ type: 'set', sidebarShow: !sidebarShow })}
-          style={{ marginInlineStart: '-14px' }}
+          onClick={() => {
+            dispatch(toggleSidebar());
+          }}
+          style={{ marginInlineStart: "-14px" }}
         >
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
@@ -66,16 +69,15 @@ const AppHeader = () => {
             </CNavLink>
           </CNavItem>
           <CNavItem>
-            <CNavLink href="/recetario" >Recetario</CNavLink>
+            <CNavLink href="/recetas">Recetario</CNavLink>
           </CNavItem>
           <CNavItem>
             <CNavLink href="/insumos">Insumos</CNavLink>
           </CNavItem>
         </CHeaderNav>
         <CHeaderNav className="ms-auto">
-          
           <CNavItem>
-          <Cart />
+            <Cart />
           </CNavItem>
         </CHeaderNav>
         <CHeaderNav>
@@ -84,9 +86,9 @@ const AppHeader = () => {
           </li>
           <CDropdown variant="nav-item" placement="bottom-end">
             <CDropdownToggle caret={false}>
-              {colorMode === 'dark' ? (
+              {colorMode === "dark" ? (
                 <CIcon icon={cilMoon} size="lg" />
-              ) : colorMode === 'auto' ? (
+              ) : colorMode === "auto" ? (
                 <CIcon icon={cilContrast} size="lg" />
               ) : (
                 <CIcon icon={cilSun} size="lg" />
@@ -94,29 +96,29 @@ const AppHeader = () => {
             </CDropdownToggle>
             <CDropdownMenu>
               <CDropdownItem
-                active={colorMode === 'light'}
+                active={colorMode === "light"}
                 className="d-flex align-items-center"
                 as="button"
                 type="button"
-                onClick={() => setColorMode('light')}
+                onClick={() => setColorMode("light")}
               >
                 <CIcon className="me-2" icon={cilSun} size="lg" /> Light
               </CDropdownItem>
               <CDropdownItem
-                active={colorMode === 'dark'}
+                active={colorMode === "dark"}
                 className="d-flex align-items-center"
                 as="button"
                 type="button"
-                onClick={() => setColorMode('dark')}
+                onClick={() => setColorMode("dark")}
               >
                 <CIcon className="me-2" icon={cilMoon} size="lg" /> Dark
               </CDropdownItem>
               <CDropdownItem
-                active={colorMode === 'auto'}
+                active={colorMode === "auto"}
                 className="d-flex align-items-center"
                 as="button"
                 type="button"
-                onClick={() => setColorMode('auto')}
+                onClick={() => setColorMode("auto")}
               >
                 <CIcon className="me-2" icon={cilContrast} size="lg" /> Auto
               </CDropdownItem>
@@ -124,9 +126,11 @@ const AppHeader = () => {
           </CDropdown>
           <li className="nav-item py-1">
             <div className="vr h-100 mx-2 text-body text-opacity-75"></div>
-          </li> 
+          </li>
           <CNavItem>
-          <CButton color="outline-light ms-3" onClick={handleLogout} >Salir</CButton>
+            <CButton color="outline-light ms-3" onClick={handleLogout}>
+              Salir
+            </CButton>
           </CNavItem>
         </CHeaderNav>
       </CContainer>
@@ -134,7 +138,7 @@ const AppHeader = () => {
         <AppBreadcrumb />
       </CContainer>
     </CHeader>
-  )
-}
+  );
+};
 
-export default AppHeader
+export default AppHeader;

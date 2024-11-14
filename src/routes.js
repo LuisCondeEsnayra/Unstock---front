@@ -2,7 +2,7 @@ import React from "react";
 const Dashboard = React.lazy(() => import("./views/dashboard/Dashboard")); 
 
 // Base
-const Recipes = React.lazy(() => import("./views/base/recipes/Recipes"));  
+const Recipes = React.lazy(() => import("./views/recipes/Recipes"));  
 const Consumables = React.lazy(() => import("./views/consumables/ConsumablesView")); 
  
 const routes = [
