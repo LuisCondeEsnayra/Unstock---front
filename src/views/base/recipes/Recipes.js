@@ -1,11 +1,13 @@
 import React from 'react'
 import RecipesComponent from '../../../components/recipes/Recipes'
+import Banner from '../../../components/Banner'
 
 const Recipes = () => {
   return (
-    <div>
+    <>
+        <Banner text= "Recetas"/>
         <RecipesComponent/>
-    </div>
+    </>
   )
 }
 

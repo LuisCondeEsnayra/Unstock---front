@@ -41,12 +41,9 @@ const Cart = () => {
   return (
     <>
       <CButton onClick={handleVisibility}>
-        <div
-          className="badge text-bg-primary text-wrap p-1"
-          style={{ width: 3 + "rem" }}
+        <div  
         >
-          <CIcon icon={cilCart} />
-          Carrito
+          <CIcon icon={cilCart} /> 
         </div>
       </CButton>
       <CModal

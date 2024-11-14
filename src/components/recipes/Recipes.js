@@ -36,7 +36,7 @@ const Recipes = () => {
 
   return (
     <>
-      <CCard className="my-3">
+      <CCard className="mb-3">
         <CRow>
           <div className="col   mt-5 ms-4">
             <label for="search">Buscar Receta:</label>

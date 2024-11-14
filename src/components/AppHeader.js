@@ -18,8 +18,7 @@ import CIcon from '@coreui/icons-react'
 import {
   cilBell,
   cilContrast,
-  cilEnvelopeOpen,
-  cilList,
+  cilEnvelopeOpen, 
   cilMenu,
   cilMoon,
   cilSun,
@@ -27,6 +26,7 @@ import {
 
 import { AppBreadcrumb } from './index'
 import { AppHeaderDropdown } from './header/index'
+import Cart from './cart/Cart'
 
 const AppHeader = () => {
   const headerRef = useRef()
@@ -72,13 +72,11 @@ const AppHeader = () => {
           </CNavItem>
           <CNavItem>
             <CNavLink href="#">
-              <CIcon icon={cilList} size="lg" />
+              <CIcon icon={cilEnvelopeOpen} size="lg" />
             </CNavLink>
           </CNavItem>
           <CNavItem>
-            <CNavLink href="#">
-              <CIcon icon={cilEnvelopeOpen} size="lg" />
-            </CNavLink>
+          <Cart />
           </CNavItem>
         </CHeaderNav>
         <CHeaderNav>
