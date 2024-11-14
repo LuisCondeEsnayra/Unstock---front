@@ -25,10 +25,8 @@ import {
   cilSun,
 } from '@coreui/icons'
 
-import { AppBreadcrumb } from './index'
-import { AppHeaderDropdown } from './header/index'
-import Cart from './cart/Cart'
-import { NavItem } from 'reactstrap'
+import { AppBreadcrumb } from './index' 
+import Cart from './cart/Cart' 
 import { setAuthenticated } from '../store'
 
 const AppHeader = () => {
@@ -75,16 +73,7 @@ const AppHeader = () => {
           </CNavItem>
         </CHeaderNav>
         <CHeaderNav className="ms-auto">
-          <CNavItem>
-            <CNavLink href="#">
-              <CIcon icon={cilBell} size="lg" />
-            </CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">
-              <CIcon icon={cilEnvelopeOpen} size="lg" />
-            </CNavLink>
-          </CNavItem>
+          
           <CNavItem>
           <Cart />
           </CNavItem>
@@ -135,10 +124,7 @@ const AppHeader = () => {
           </CDropdown>
           <li className="nav-item py-1">
             <div className="vr h-100 mx-2 text-body text-opacity-75"></div>
-          </li>
-          <CNavItem>
-          <AppHeaderDropdown />
-          </CNavItem>
+          </li> 
           <CNavItem>
           <CButton color="outline-light ms-3" onClick={handleLogout} >Salir</CButton>
           </CNavItem>

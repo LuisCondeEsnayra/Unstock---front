@@ -6,9 +6,7 @@ import {
   CChartBar,
   CChartDoughnut,
   CChartLine,
-  CChartPie,
-  CChartPolarArea,
-  CChartRadar,
+  CChartPie, 
 } from '@coreui/react-chartjs' 
 import { useNavigate } from "react-router-dom";
 
