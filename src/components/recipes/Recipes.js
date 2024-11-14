@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import recipeExample from "../../assets/recipes.json";
-import { CButton, CCard, CCol, CRow } from "@coreui/react";
+import { CButton, CCard,   CRow } from "@coreui/react";
 import RecipeBanner from "./RecipeBanner";
 import RecipeGrid from "./RecipeGrid";
-import RecipeModal from "./RecipeModal";
+import RecipeModal from "./recipeModal/RecipeModal";
 import CIcon from "@coreui/icons-react";
 import { cilPlus } from "@coreui/icons";
 
