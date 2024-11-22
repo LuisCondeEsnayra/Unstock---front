@@ -1,49 +1,127 @@
-import React from "react";
-import { CFormInput, CFormLabel, CFormTextarea, CRow, CCol } from "@coreui/react";
-import MeasureDropdown from "./MeasureDropdown";
+import React, { useState, useEffect } from "react";
+import { CFormInput, CFormLabel, CRow, CCol, CFormTextarea } from "@coreui/react";
+import MeasureDropdown from "./MeasureDropdown"; // Assuming MeasureDropdown is correctly defined
 
-const ProductForm = () => (
-  <CRow>
-    <CCol md="12" lg="6">
-      <div className="mb-3">
+const ProductForm = ({ checkCompletion, setProductData, productData }) => {
+  const [productName, setProductName] = useState(productData.productName || "");
+  const [cost, setCost] = useState(productData.cost || "");
+  const [sellQuantity, setSellQuantity] = useState(productData.sellQuantity || "");
+  const [yieldRecipe, setYieldRecipe] = useState(productData.yieldRecipe || "");
+  const [image, setImage] = useState(productData.image || "");
+  const [recipe, setRecipe] = useState(productData.recipe || "");
+  const [sellCost, setSellCost] = useState(productData.sellCost || "");
+  const [type, setType] = useState(productData.type || "");
+
+  // Function to update product data in the parent component
+  const handleInputChange = () => {
+    const newProductData = {
+      productName,
+      cost,
+      sellQuantity,
+      yieldRecipe,
+      image,
+      recipe,
+      sellCost,
+      type,
+    };
+    setProductData(newProductData); // Update the product data in the parent component
+    checkCompletion(); // Notify parent about form changes
+  };
+
+  useEffect(() => {
+    handleInputChange(); // On initial render or any change, update the parent
+  }, [productName, cost, sellQuantity, yieldRecipe, image, recipe, sellCost, type]);
+
+  return (
+    <CRow>
+      <CCol md="6" className="mb-3">
+        {/* Product Name */}
         <CFormLabel htmlFor="name">Nombre</CFormLabel>
-        <CFormInput type="text" id="name" placeholder="Nombre" />
-      </div>
-      <div className="mb-3">
-        <CFormLabel htmlFor="cost">Costo de venta</CFormLabel>
-        <CFormInput type="text" id="cost" placeholder="Costo de venta" />
-      </div>
-      <div className="mb-3">
+        <CFormInput
+          type="text"
+          id="name"
+          value={productName}
+          onChange={(e) => setProductName(e.target.value)}
+          placeholder="Nombre"
+          className="mb-3"
+        />
+
+        {/* Sale Cost */}
+        <CFormLabel htmlFor="costSale">Costo de venta</CFormLabel>
+        <CFormInput
+          type="number"
+          id="costSale"
+          value={cost}
+          onChange={(e) => setCost(e.target.value)}
+          placeholder="Costo de venta"
+          className="mb-3"
+        />
+
+        {/* Quantity and Type (Measurement dropdown) */}
         <CRow>
-          <CCol sm="8" md="8" lg="8">
-            <CFormLabel htmlFor="sell">Cantidad de venta:</CFormLabel>
-            <CFormInput type="text" id="sell" placeholder="Ej. 2" />
+          <CCol>
+            <CFormLabel htmlFor="sell">Cantidad de venta</CFormLabel>
+            <CFormInput
+              type="number"
+              id="sell"
+              value={sellQuantity}
+              onChange={(e) => setSellQuantity(e.target.value)}
+              placeholder="Ej. 2"
+              className="mb-3"
+            />
           </CCol>
-          <CCol sm="4" md="4" lg="4">
-            <CFormLabel htmlFor="sell">Medida:</CFormLabel> <br />
-            <MeasureDropdown />
+          <CCol>
+            <MeasureDropdown setType={setType} /> {/* Pass setType function */}
           </CCol>
         </CRow>
-      </div>
-      <div className="mb-3">
-        <CFormLabel htmlFor="cost">Costo</CFormLabel>
-        <CFormInput type="text" id="cost" placeholder="Costo" />
-      </div>
-    </CCol>
-    <CCol>
-      <div className="mb-3">
-        <CFormLabel htmlFor="yield">Rendimiento de Receta:</CFormLabel>
-        <CFormInput type="text" id="yield" placeholder="Rendimiento de Receta:" />
-      </div>
-      <div className="mb-3">
-        <CFormInput type="file" id="image" label="Imagen:" />
-      </div>
-      <div className="mb-3">
+
+        {/* Sell Cost */}
+        <CFormLabel htmlFor="sellCost">Costo</CFormLabel>
+        <CFormInput
+          type="number"
+          id="sellCost"
+          value={sellCost}
+          onChange={(e) => setSellCost(e.target.value)}
+          placeholder="Costo"
+          className="mb-3"
+        />
+      </CCol>
+
+      <CCol>
+        {/* Yield of Recipe */}
+        <CFormLabel htmlFor="yield">Rendimiento de Receta</CFormLabel>
+        <CFormInput
+          type="number"
+          id="yield"
+          value={yieldRecipe}
+          onChange={(e) => setYieldRecipe(e.target.value)}
+          placeholder="Rendimiento de Receta"
+          className="mb-3"
+        />
+
+        {/* Image URL */}
+        <CFormLabel htmlFor="image">Imagen</CFormLabel>
+        <CFormInput
+          type="text"
+          id="image"
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+          placeholder="Imagen URL"
+          className="mb-3"
+        />
+
+        {/* Recipe Instructions */}
         <CFormLabel htmlFor="recipe">Receta</CFormLabel>
-        <CFormTextarea id="recipe" rows={3}></CFormTextarea>
-      </div>
-    </CCol>
-  </CRow>
-);
+        <CFormTextarea
+          id="recipe"
+          value={recipe}
+          onChange={(e) => setRecipe(e.target.value)}
+          rows={3}
+          className="mb-3"
+        />
+      </CCol>
+    </CRow>
+  );
+};
 
 export default ProductForm;

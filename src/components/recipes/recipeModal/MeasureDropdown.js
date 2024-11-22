@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { CDropdown, CDropdownToggle, CDropdownMenu, CDropdownItem } from "@coreui/react";
+import { CDropdown, CDropdownToggle, CDropdownMenu, CDropdownItem, CFormLabel, CRow } from "@coreui/react";
 
-const MeasureDropdown = () => {
+const MeasureDropdown = ({ setType }) => {
   const [medida, setMedida] = useState("");
   const options = [
     { value: "gr", label: "Gramos" },
@@ -9,21 +9,31 @@ const MeasureDropdown = () => {
     { value: "piezas", label: "Piezas" },
   ];
 
-  const handleMeasure = (measure) => setMedida(measure);
+  const handleMeasure = (measure) => {
+    setMedida(measure.label); // Update the local state for display
+    setType(measure.value); // Pass the selected value back to ProductForm
+  };
 
   return (
-    <CDropdown>
-      <CDropdownToggle color="secondary">
-        {medida.length > 0 ? medida : "Medida"}
-      </CDropdownToggle>
-      <CDropdownMenu>
-        {options.map((option, i) => (
-          <CDropdownItem key={i} onClick={() => handleMeasure(option.value)}>
-            {option.label}
-          </CDropdownItem>
-        ))}
-      </CDropdownMenu>
-    </CDropdown>
+    <>
+      <CRow>
+        <CFormLabel htmlFor="cantidad">Cantidad:</CFormLabel>
+      </CRow>
+      <CRow>
+        <CDropdown id="cantidad">
+          <CDropdownToggle color="secondary">
+            {medida.length > 0 ? medida : "Medida"}
+          </CDropdownToggle>
+          <CDropdownMenu>
+            {options.map((option, i) => (
+              <CDropdownItem key={i} onClick={() => handleMeasure(option)}>
+                {option.label}
+              </CDropdownItem>
+            ))}
+          </CDropdownMenu>
+        </CDropdown>
+      </CRow>
+    </>
   );
 };
 

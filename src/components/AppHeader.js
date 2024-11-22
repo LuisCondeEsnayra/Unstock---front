@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
   CContainer,
@@ -51,6 +51,12 @@ const AppHeader = () => {
     navigate("/login", { replace: true });
   };
 
+  const navOptions = ["Dashboard","Recetas","Insumos"]
+  const handleNavItems=(item)=>{
+    
+    navigate("/"+item, { replace: true });
+  }
+
   return (
     <CHeader position="sticky" className="mb-4 p-0" ref={headerRef}>
       <CContainer className="border-bottom px-4" fluid>
@@ -63,17 +69,10 @@ const AppHeader = () => {
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
         <CHeaderNav className="d-none d-md-flex">
-          <CNavItem>
-            <CNavLink to="/dashboard" as={NavLink}>
-              Dashboard
-            </CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="/recetas">Recetario</CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="/insumos">Insumos</CNavLink>
-          </CNavItem>
+       
+         {navOptions.map(item=> <CNavItem>
+            <CNavLink onClick={()=>{handleNavItems(item.toLowerCase())}}>{item}</CNavLink>
+          </CNavItem> )}
         </CHeaderNav>
         <CHeaderNav className="ms-auto">
           <CNavItem>
