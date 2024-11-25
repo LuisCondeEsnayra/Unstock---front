@@ -7,8 +7,7 @@ const initialState = {
 }
 
 // Action Types
-const SET_AUTHENTICATED = 'SET_AUTHENTICATED'
-const SET_THEME = 'SET_THEME'
+const SET_AUTHENTICATED = 'SET_AUTHENTICATED' 
 const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR'
 
 // Reducer

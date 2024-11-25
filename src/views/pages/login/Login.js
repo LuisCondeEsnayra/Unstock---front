@@ -34,7 +34,12 @@ const Login = () => {
   const handleSubmit = (ev) => {
   
     ev.preventDefault();
-    if (password === "utch" && user.toLowerCase() === "alejandra") { 
+    if (password === "utch" && user.toLowerCase() === "admin") { 
+      dispatch(setAuthenticated(true))
+      navigate("/", {replace:true})
+          
+    } 
+    if (password === "gastro" && user.toLowerCase() === "cliente") { 
       dispatch(setAuthenticated(true))
       navigate("/", {replace:true})
           

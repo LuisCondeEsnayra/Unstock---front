@@ -2,25 +2,17 @@ import React, { useEffect, useRef } from "react";
 import {  useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
-  CContainer,
-  CDropdown,
-  CDropdownItem,
-  CDropdownMenu,
-  CDropdownToggle,
+  CContainer, 
   CHeader,
   CHeaderNav,
   CHeaderToggler,
   CNavLink,
-  CNavItem,
-  useColorModes,
+  CNavItem, 
   CButton,
 } from "@coreui/react";
 import CIcon from "@coreui/icons-react";
-import { 
-  cilContrast, 
-  cilMenu,
-  cilMoon,
-  cilSun,
+import {  
+  cilMenu, 
 } from "@coreui/icons";
 
 import { AppBreadcrumb } from "./index";
@@ -28,10 +20,7 @@ import Cart from "./cart/Cart";
 import { setAuthenticated, toggleSidebar } from "../store";
 
 const AppHeader = () => {
-  const headerRef = useRef();
-  const { colorMode, setColorMode } = useColorModes(
-    "coreui-free-react-admin-template-theme"
-  );
+  const headerRef = useRef(); 
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
