@@ -13,13 +13,13 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const random = () => Math.round(Math.random() * 100) 
   return (
-    <> 
+    <CCard className="p-3"> 
     <Banner text="Dashboard"/> 
-    <CContainer className="my-3">
+    <CContainer className="my-3 ">
       <CRow>
         <CCol>
-          <CButton color="outline-dark" className="mx-2" onClick={()=>{navigate("/recetas")}}>  Recetas </CButton> 
-        <CButton color="outline-dark" className="mx-2" onClick={()=>{navigate("/insumos")}}>  Insumos  </CButton> 
+          <CButton color="dark" className="mx-2" onClick={()=>{navigate("/recetas")}}>  Recetas </CButton> 
+        <CButton color="dark" className="mx-2" onClick={()=>{navigate("/insumos")}}>  Insumos  </CButton> 
         </CCol>  
       </CRow>
     </CContainer>
@@ -114,7 +114,7 @@ const Dashboard = () => {
         </CCard>  
       </CCol>
     </CRow> 
-      </>
+      </CCard>
   );
 };
 

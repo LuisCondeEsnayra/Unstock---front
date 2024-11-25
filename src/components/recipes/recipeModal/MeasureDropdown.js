@@ -21,7 +21,7 @@ const MeasureDropdown = ({ setType }) => {
       </CRow>
       <CRow>
         <CDropdown id="cantidad">
-          <CDropdownToggle color="secondary">
+          <CDropdownToggle >
             {medida.length > 0 ? medida : "Medida"}
           </CDropdownToggle>
           <CDropdownMenu>

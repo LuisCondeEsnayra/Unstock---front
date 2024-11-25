@@ -47,7 +47,7 @@ const AppHeader = () => {
   }
 
   return (
-    <CHeader position="sticky" className="mb-4 p-0" ref={headerRef}>
+    <CHeader position="sticky" className="mb-4 p-0 bg-success" ref={headerRef}>
       <CContainer className="border-bottom px-4" fluid>
         <CHeaderToggler
           onClick={() => {
@@ -116,7 +116,7 @@ const AppHeader = () => {
             <div className="vr h-100 mx-2 text-body text-opacity-75"></div>
           </li>
           <CNavItem>
-            <CButton color="outline-dark ms-3" onClick={handleLogout}>
+            <CButton color="dark ms-3" onClick={handleLogout}>
               Salir
             </CButton>
           </CNavItem>

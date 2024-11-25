@@ -51,9 +51,9 @@ const Cart = () => {
         scrollable
         visible={visible}
         onClose={() => setVisible(false)}
-        aria-labelledby="Carro"
+        aria-labelledby="Ordenes"
       >
-        <CModalHeader>Carro</CModalHeader>
+        <CModalHeader>Ordenes</CModalHeader>
 
         <CFormInput
           type="text"

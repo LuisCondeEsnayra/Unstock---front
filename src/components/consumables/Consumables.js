@@ -88,7 +88,7 @@ const Consumables = () => {
   };
 
   return (
-    <CCard>
+    <CCard  className="p-3">
       <CFormInput
         type="text"
         placeholder="Buscar..."

@@ -3,7 +3,7 @@ import { legacy_createStore as createStore } from 'redux'
 // Initial state
 const initialState = {
   sidebarShow: true, 
-  isAuthenticated: false,
+  isAuthenticated: true,
 }
 
 // Action Types

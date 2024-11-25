@@ -56,7 +56,7 @@ const Login = () => {
                 <CCardBody>
                   <CForm onSubmit={handleSubmit}>
                     <h1>Inicio de sesión</h1>
-                    <p className="text-body-secondary">Inicia sesión en tu cuenta</p>
+                    <p className="text-body-dark">Inicia sesión en tu cuenta</p>
                     <CInputGroup className="mb-3">
                       <CInputGroupText>
                         <CIcon icon={cilUser} />

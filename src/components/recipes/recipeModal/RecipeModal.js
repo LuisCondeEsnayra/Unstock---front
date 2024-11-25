@@ -120,7 +120,7 @@ const RecipeModal = (props) => {
         props.closeModal();
         setAddedIngredients([]); // Reset added ingredients when modal closes
       }}
-      aria-labelledby="Carro"
+      aria-labelledby="Ordenes"
     >
       <CModalHeader>Productos</CModalHeader>
       <CModalBody>
@@ -154,7 +154,7 @@ const RecipeModal = (props) => {
 
           {/* Add Ingredient Button */}
           <CButton
-            className="btn-outline-dark"
+            className="btn-dark"
             onClick={handleAddIngredient}
             disabled={isAddButtonDisabled}
           >
@@ -163,7 +163,7 @@ const RecipeModal = (props) => {
 
           {/* Clear Ingredients Button */}
           <CButton
-            className="btn-outline-dark ms-2"
+            className="btn-dark ms-2"
             disabled={addedIngredients.length === 0}
             onClick={() => {
               setAddedIngredients([]); // Clear ingredients
