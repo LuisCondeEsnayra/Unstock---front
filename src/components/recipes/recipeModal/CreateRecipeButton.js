@@ -5,7 +5,7 @@ import { CButton } from '@coreui/react';
 const CreateRecipeButton = ({ onClick, isDisabled }) => {
   return (
     <CButton
-      className="btn-outline-light"
+      className="btn"
       onClick={onClick}
       disabled={isDisabled}
     >

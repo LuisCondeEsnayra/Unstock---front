@@ -52,9 +52,9 @@ body {
 }
 
 @if $enable-dark-mode {
-  @include color-mode(dark) {
+  @include color-mode(light) {
     body {
-      background-color: var(--cui-dark-bg-subtle);
+      background-color: var(--cui-light-bg-subtle);
     }
 
     .footer {

@@ -2,9 +2,8 @@ import { legacy_createStore as createStore } from 'redux'
 
 // Initial state
 const initialState = {
-  sidebarShow: true,
-  theme: 'light',
-  isAuthenticated: true,
+  sidebarShow: true, 
+  isAuthenticated: false,
 }
 
 // Action Types
@@ -16,9 +15,7 @@ const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR'
 const changeState = (state = initialState, action) => {
   switch (action.type) {
     case SET_AUTHENTICATED:
-      return { ...state, isAuthenticated: action.payload }
-    case SET_THEME:
-      return { ...state, theme: action.payload }
+      return { ...state, isAuthenticated: action.payload } 
     case TOGGLE_SIDEBAR:
       return { ...state, sidebarShow: !state.sidebarShow }
     default:
@@ -34,12 +31,7 @@ export const setAuthenticated = (isAuthenticated) => ({
   type: SET_AUTHENTICATED,
   payload: isAuthenticated,
 })
-
-export const setTheme = (theme) => ({
-  type: SET_THEME,
-  payload: theme,
-})
-
+ 
 export const toggleSidebar = () => ({
   type: TOGGLE_SIDEBAR,
 })

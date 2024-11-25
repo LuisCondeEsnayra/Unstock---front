@@ -154,7 +154,7 @@ const RecipeModal = (props) => {
 
           {/* Add Ingredient Button */}
           <CButton
-            className="btn-outline-light"
+            className="btn-outline-dark"
             onClick={handleAddIngredient}
             disabled={isAddButtonDisabled}
           >
@@ -163,7 +163,7 @@ const RecipeModal = (props) => {
 
           {/* Clear Ingredients Button */}
           <CButton
-            className="btn-outline-light ms-2"
+            className="btn-outline-dark ms-2"
             disabled={addedIngredients.length === 0}
             onClick={() => {
               setAddedIngredients([]); // Clear ingredients

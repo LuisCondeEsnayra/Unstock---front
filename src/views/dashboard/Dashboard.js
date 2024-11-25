@@ -18,8 +18,8 @@ const Dashboard = () => {
     <CContainer className="my-3">
       <CRow>
         <CCol>
-          <CButton color="outline-light" className="mx-2" onClick={()=>{navigate("/recetas")}}>  Recetas </CButton> 
-        <CButton color="outline-light" className="mx-2" onClick={()=>{navigate("/insumos")}}>  Insumos  </CButton> 
+          <CButton color="outline-dark" className="mx-2" onClick={()=>{navigate("/recetas")}}>  Recetas </CButton> 
+        <CButton color="outline-dark" className="mx-2" onClick={()=>{navigate("/insumos")}}>  Insumos  </CButton> 
         </CCol>  
       </CRow>
     </CContainer>

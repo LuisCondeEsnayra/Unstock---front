@@ -37,7 +37,7 @@
     "name": "platano",
     "price": 20,
     "quantity": 5,
-    "stock": 20,
+    "stock": 2,
     "type": "piezas",
     "provider": "Alsuper",
     "expirationDate": "2024-11-10",

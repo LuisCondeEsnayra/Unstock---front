@@ -7,9 +7,7 @@
 
 // Vendors
 @import "vendors/simplebar";
-
-// Custom styles for this theme
-@import "theme";
-
-// If you want to add custom CSS you can put it here
-@import "custom";
+   
+// Custom styles for your theme
+@import "theme"; 
+@import './custom';

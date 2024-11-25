@@ -32,7 +32,7 @@ const CartTable = (props) => {
     if (!insufficientStock) {
       setQuantity(quantity + 1);
     } else {
-      alert("Stock is insufficient for this item!");
+      alert("No hay suficiente stock para crear esta receta!");
     }
   };
 
