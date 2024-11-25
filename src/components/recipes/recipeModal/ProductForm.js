@@ -47,12 +47,13 @@ const ProductForm = ({ checkCompletion, setProductData, productData }) => {
         />
 
         {/* Sale Cost */}
-        <CFormLabel htmlFor="costSale">Costo de venta</CFormLabel>
+        <CFormLabel htmlFor="sellCost">Costo de venta</CFormLabel>
         <CFormInput
           type="number"
-          id="costSale"
-          value={cost}
-          onChange={(e) => setCost(e.target.value)}
+          id="sellCost"
+          value={sellCost}
+          min={0}
+          onChange={(e) => setSellCost(e.target.value)}
           placeholder="Costo de venta"
           className="mb-3"
         />
@@ -64,6 +65,7 @@ const ProductForm = ({ checkCompletion, setProductData, productData }) => {
             <CFormInput
               type="number"
               id="sell"
+              min={0}
               value={sellQuantity}
               onChange={(e) => setSellQuantity(e.target.value)}
               placeholder="Ej. 2"
@@ -76,12 +78,13 @@ const ProductForm = ({ checkCompletion, setProductData, productData }) => {
         </CRow>
 
         {/* Sell Cost */}
-        <CFormLabel htmlFor="sellCost">Costo</CFormLabel>
+        <CFormLabel htmlFor="cost">Costo</CFormLabel>
         <CFormInput
           type="number"
-          id="sellCost"
-          value={sellCost}
-          onChange={(e) => setSellCost(e.target.value)}
+          id="cost"
+          value={cost}
+          min={0}
+          onChange={(e) => setCost(e.target.value)}
           placeholder="Costo"
           className="mb-3"
         />
@@ -93,6 +96,7 @@ const ProductForm = ({ checkCompletion, setProductData, productData }) => {
         <CFormInput
           type="number"
           id="yield"
+          min={0}
           value={yieldRecipe}
           onChange={(e) => setYieldRecipe(e.target.value)}
           placeholder="Rendimiento de Receta"

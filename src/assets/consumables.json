@@ -1,7 +1,18 @@
 [
   {
     "label": "Fresas",
-    "name": "fresas",
+    "name": "fresa",
+    "price": 50,
+    "quantity": 15,
+    "stock": 100,
+    "type": "piezas",
+    "provider": "Alsuper",
+    "expirationDate": "2024-11-15",
+    "minimumQuantity": 1
+  },
+  {
+    "label": "Frambuesa",
+    "name": "frambuesa",
     "price": 50,
     "quantity": 15,
     "stock": 100,
@@ -12,7 +23,7 @@
   },
   {
     "label": "BlueBerrys",
-    "name": "blueberrys",
+    "name": "blueberry",
     "price": 60,
     "quantity": 25,
     "stock": 200,
@@ -26,7 +37,7 @@
     "name": "platano",
     "price": 20,
     "quantity": 5,
-    "stock": 0,
+    "stock": 20,
     "type": "piezas",
     "provider": "Alsuper",
     "expirationDate": "2024-11-10",
@@ -59,6 +70,18 @@
     "label": "Sal",
     "name": "sal",
     "brand": "Cisne",
+    "price": 20,
+    "quantity": 1000,
+    "stock": 3000,
+    "type": "gr",
+    "provider": "Alsuper",
+    "expirationDate": "2026-01-01",
+    "minimumQuantity": 5
+  }, 
+  {
+    "label": "Canela",
+    "name": "canela",
+    "brand": "My_brand",
     "price": 20,
     "quantity": 1000,
     "stock": 3000,
@@ -220,10 +243,22 @@
     "provider": "Sams",
     "expirationDate": "2025-12-31",
     "minimumQuantity": 50
+  }, 
+  {
+    "label": "Miel de maple",
+    "name": "miel_de_maple",
+    "brand": "Members Mark",
+    "price": 162,
+    "quantity": 1767,
+    "stock": 3000,
+    "type": "ml",
+    "provider": "Sams",
+    "expirationDate": "2025-12-31",
+    "minimumQuantity": 50
   },
   {
     "label": "Cerezas",
-    "name": "cerezas",
+    "name": "cereza",
     "brand": "Members Mark",
     "price": 210,
     "quantity": 100,
@@ -234,8 +269,8 @@
     "minimumQuantity": 10
   },
   {
-    "label": "Popotes",
-    "name": "popotes",
+    "label": "Popote",
+    "name": "popote",
     "brand": "Primo",
     "price": 343,
     "quantity": 500,

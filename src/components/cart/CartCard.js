@@ -7,7 +7,11 @@ const CartCard = (props) => {
     <CTable hover>
       <CTableBody>
         {props.recipes.map((recipe) => (
-          <CartTable key={recipe.id} recipe={recipe} />
+          <CartTable
+            key={recipe.id}
+            recipe={recipe}
+            consumables={props.consumables} // Passing consumables data
+          />
         ))}
       </CTableBody>
     </CTable>

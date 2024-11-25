@@ -9,18 +9,21 @@ import {
   CModalHeader,
 } from "@coreui/react";
 import CIcon from "@coreui/icons-react";
-import { cilCart } from "@coreui/icons";
+import {  cilFastfood } from "@coreui/icons";
 import recipeExample from "../../assets/recipes.json";
+import consumablesData from "../../assets/consumables.json"; // Assuming consumables data is imported
 
 const Cart = () => {
   const [visible, setVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [recipes, setRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
+  const [consumables, setConsumables] = useState([]);
 
   useEffect(() => {
     setRecipes(recipeExample.recipes);
     setFilteredRecipes(recipeExample.recipes);
+    setConsumables(consumablesData); // Assuming consumables data is fetched or imported
   }, []);
 
   const handleVisibility = () => {
@@ -40,11 +43,8 @@ const Cart = () => {
 
   return (
     <>
-      <CButton onClick={handleVisibility}>
-        <div  
-        >
-          <CIcon icon={cilCart} /> 
-        </div>
+      <CButton   onClick={handleVisibility}>
+        <CIcon  size="xxl"  icon={cilFastfood} />
       </CButton>
       <CModal
         alignment="center"
@@ -65,14 +65,14 @@ const Cart = () => {
 
         <CModalBody>
           {filteredRecipes.length > 0 ? (
-            <CartCard recipes={filteredRecipes} />
+            <CartCard recipes={filteredRecipes} consumables={consumables} />
           ) : (
             <h5>No se encontraron resultados</h5>
           )}
         </CModalBody>
         <CModalFooter>
-          <CButton color="secondary" onClick={() => setVisible(false)}>
-            Cerrar
+          <CButton color="primary" onClick={() => setVisible(false)}>
+            Ordenar
           </CButton>
         </CModalFooter>
       </CModal>

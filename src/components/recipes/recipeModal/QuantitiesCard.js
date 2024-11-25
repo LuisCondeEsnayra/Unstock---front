@@ -1,7 +1,7 @@
 import React from "react";
 import {  CFormInput, CRow } from "@coreui/react";
 
-const QuantitiesCard = ({ ingredient, quantity, setQuantity, type }) => {
+const QuantitiesCard = ({ ingredient, quantity, setQuantity, type ,handleInputChange}) => {
   return (
     <CRow>
       <div className="col-8">
@@ -10,6 +10,7 @@ const QuantitiesCard = ({ ingredient, quantity, setQuantity, type }) => {
           value={ingredient}
           placeholder="Ingrediente"
           disabled
+          onChange={handleInputChange}
         ></CFormInput>
       </div>
 
@@ -19,7 +20,8 @@ const QuantitiesCard = ({ ingredient, quantity, setQuantity, type }) => {
           <CFormInput
             type="number"
             value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
+            onChange={(e) =>{ setQuantity(e.target.value)
+              handleInputChange()}}
             placeholder="Cantidad"
           />
         </div>

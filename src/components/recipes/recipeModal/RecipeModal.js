@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { CModal, CModalHeader, CModalBody, CContainer, CButton, CModalFooter } from "@coreui/react";
-import ProductForm from "./ProductForm"; 
+import {
+  CModal,
+  CModalHeader,
+  CModalBody,
+  CContainer,
+  CButton,
+  CModalFooter,
+} from "@coreui/react";
+import ProductForm from "./ProductForm";
 import QuantitiesCard from "./QuantitiesCard";
 import AddedIngredients from "./AddedIngredients";
-import CreateRecipeButton from "./CreateRecipeButton"; 
+import CreateRecipeButton from "./CreateRecipeButton";
 import SearchableMultiSelect from "./SearchableMultiSelect";
-import consumablesData from "../../../assets/consumables.json"; 
+import consumablesData from "../../../assets/consumables.json";
 
 const RecipeModal = (props) => {
-  // State for ingredient, quantity, quantity, type, and added ingredients
-  const [ingredient, setIngredient] = useState(""); 
+  // State for ingredient, quantity, type, added ingredients, and product data
+  const [ingredient, setIngredient] = useState("");
   const [quantity, setQuantity] = useState(""); // quantity (gr, ml, piezas)
   const [type, setType] = useState(""); // Ingredient type (piezas, etc.)
   const [addedIngredients, setAddedIngredients] = useState([]);
@@ -37,6 +44,7 @@ const RecipeModal = (props) => {
 
   // Check if all necessary fields are filled to enable "Añadir" button
   const handleInputChange = () => {
+    console.log(ingredient, quantity, type);
     if (ingredient && quantity && type) {
       setIsAddButtonDisabled(false); // Enable button if all fields are filled
     } else {
@@ -53,27 +61,35 @@ const RecipeModal = (props) => {
         type,
       };
       setAddedIngredients((prev) => [...prev, newIngredient]);
+
       setIngredient(""); // Reset ingredient selection
       setQuantity(""); // Reset quantity
       setType(""); // Reset type
       setIsAddButtonDisabled(true); // Disable "Añadir" button again after adding
-      checkFormCompletion(); // Recheck if form is complete
     }
   };
 
   // Check if "Crear Receta" button should be enabled (all fields + ingredients)
   const checkFormCompletion = () => {
-    if (addedIngredients.length > 0 && productData.productName) {
-      setIsFormDisabled(false); // Enable "Crear receta" button if ingredients and product data are added
-    } else {
-      setIsFormDisabled(true); // Disable "Crear receta" button if no ingredients or product data are added
-    }
+    return (
+      productData.productName !== "" &&
+      productData.cost > 0 &&
+      productData.type !== "" &&
+      productData.sellQuantity > 0 &&
+      productData.yieldRecipe > 0 &&
+      productData.image !== "" &&
+      productData.recipe !== "" &&
+      productData.sellCost > 0 &&
+      addedIngredients.length > 0
+    );
   };
 
+  // Whenever addedIngredients or productData changes, check if the form is complete
   useEffect(() => {
-    // Whenever ingredient, quantity, or type changes, recheck if "Añadir" button should be enabled
+    const formComplete = checkFormCompletion();
+    setIsFormDisabled(!formComplete); // Enable/disable "Crear receta" button based on form completion
     handleInputChange();
-  }, [ingredient, quantity, type]);
+  }, [addedIngredients, productData, ingredient, quantity, type]); // Re-run when addedIngredients or productData change
 
   // Gather all form data and pass it to parent component
   const handleCreateRecipe = () => {
@@ -90,6 +106,7 @@ const RecipeModal = (props) => {
 
     // Pass the new recipe data to the parent component (Recipes)
     props.onAddRecipe(newRecipe);
+    setAddedIngredients([]); // Reset added ingredients
     props.closeModal(); // Close the modal after submitting
   };
 
@@ -99,21 +116,24 @@ const RecipeModal = (props) => {
       scrollable
       size="xl"
       visible={props.visible}
-      onClose={() => props.closeModal()}
+      onClose={() => {
+        props.closeModal();
+        setAddedIngredients([]); // Reset added ingredients when modal closes
+      }}
       aria-labelledby="Carro"
     >
       <CModalHeader>Productos</CModalHeader>
       <CModalBody>
         <CContainer>
           {/* Product Form (ProductForm component) */}
-          <ProductForm 
-            checkCompletion={checkFormCompletion} 
+          <ProductForm
+            checkCompletion={checkFormCompletion}
             setProductData={setProductData}
             productData={productData} // Pass productData to ProductForm for updates
           />
 
           {/* Ingredient Selection */}
-          <div className="mb-3"> 
+          <div className="mb-3">
             <SearchableMultiSelect
               options={consumablesData}
               renderItem={(item) => <span>{item.label}</span>}
@@ -123,12 +143,12 @@ const RecipeModal = (props) => {
 
           {/* Quantity and quantity */}
           <div className="mb-3">
-            <QuantitiesCard 
-              ingredient={ingredient} 
+            <QuantitiesCard
+              ingredient={ingredient}
               quantity={quantity}
               setQuantity={setQuantity}
               type={type}
-              onChange={handleInputChange}
+              handleInputChange={handleInputChange}
             />
           </div>
 
@@ -141,11 +161,22 @@ const RecipeModal = (props) => {
             Añadir
           </CButton>
 
+          {/* Clear Ingredients Button */}
+          <CButton
+            className="btn-outline-light ms-2"
+            disabled={addedIngredients.length === 0}
+            onClick={() => {
+              setAddedIngredients([]); // Clear ingredients
+              setIsFormDisabled(true); // Disable "Crear receta" button
+            }}
+          >
+            Borrar
+          </CButton>
+
           {/* Added Ingredients */}
           {addedIngredients.length > 0 && (
             <AddedIngredients addedIngredients={addedIngredients} />
           )}
-
         </CContainer>
       </CModalBody>
       <CModalFooter>
