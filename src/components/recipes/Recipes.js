@@ -54,8 +54,8 @@ const Recipes = () => {
               className="ms-3"
             />
           </div>
-          <div className="col-3 mt-4">
-            <CButton className="text-middle" onClick={openModal}>
+          <div className="col-3 mt-4" >
+            <CButton className="text-middle btn-dark"  onClick={openModal}>
               <CIcon icon={cilPlus} />
               <p>Añadir Receta</p>
             </CButton>

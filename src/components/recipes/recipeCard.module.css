@@ -1,6 +1,7 @@
 /* Styling for the whole card container */
 .card {
   position: relative;
+  border-radius: 8%;
   transition: border 0.3s ease-in-out; /* Smooth border transition */
 }
 
