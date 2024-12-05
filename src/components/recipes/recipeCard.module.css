@@ -1,9 +1,35 @@
-.recipeImage { 
-    width: 150px;  
-    object-fit: cover;  
-    height: 25vh; 
-    max-height: 300px;
-    min-height:150px;
-  }
-   
-  
+/* Styling for the whole card container */
+.card {
+  position: relative;
+  transition: border 0.3s ease-in-out; /* Smooth border transition */
+}
+
+.recipeImage {
+  width: 150px;
+  object-fit: cover;
+  height: 25vh;
+  max-height: 300px;
+  min-height: 150px;
+}
+
+.midBar {
+  height: auto;
+}
+
+.circleIcon {
+  border-radius: 50%;
+  border: solid 2px #c4b8ad;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Hover effect for the card */
+.card:hover {
+  border: 2px solid #c4b8ad; 
+}
+
+/* Hover effect for the icon inside the card */
+.card:hover .circleIcon {
+  transform: scale(1.4); /* Grow the icon slightly */
+  color: #4e4c4c;
+  border-color: #a89c8d; /* Optional: Change the border color of the icon */
+}

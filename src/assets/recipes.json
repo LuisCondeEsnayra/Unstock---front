@@ -13,7 +13,8 @@
         ],
         "sell": 500,
         "yields": 3000,
-        "type": "ml"
+        "type": "ml",
+        "sellCost":25
     },
     {
         "id":2,
@@ -32,12 +33,13 @@
             { "ingredient": "leche_entera", "measure": "ml", "quantity": "125" },
             { "ingredient": "fresa", "measure": "piezas", "quantity": "1" },
             { "ingredient": "blueberry", "measure": "piezas", "quantity": "5" },
-            { "ingredient": "plátano", "measure": "piezas", "quantity": "1/2" },
+            { "ingredient": "plátano", "measure": "piezas", "quantity": "0.5" },
             { "ingredient": "azúcar glass", "measure": "gr", "quantity": "2" }
         ],
         "sell": 3,
         "yields": 3,
-        "type": "Piezas"
+        "type": "Piezas",
+        "sellCost":75
     },
     {
         "id":3,
@@ -55,7 +57,8 @@
         ],
         "sell": 1,
         "yields": 1,
-        "type": "Pieza"
+        "type": "Pieza",
+        "sellCost":65
     },
     {
         "id":4,
@@ -73,7 +76,9 @@
         ],
         "sell": 1,
         "yields": 1,
-        "type": "Pieza"
+        "type": "Pieza",
+        "sellCost":100
+        
     },
     {
         "id":6,
@@ -89,13 +94,14 @@
             { "ingredient": "canela", "measure": "gr", "quantity": "1" },
             { "ingredient": "frambuesa", "measure": "piezas", "quantity": "6" },
             { "ingredient": "blueberry", "measure": "piezas", "quantity": "5" },
-            { "ingredient": "plátano", "measure": "piezas", "quantity": "1/2" },
+            { "ingredient": "plátano", "measure": "piezas", "quantity": "0.5" },
             { "ingredient": "azúcar glass", "measure": "gr", "quantity": "3" },
             { "ingredient": "miel de maple", "measure": "ml", "quantity": "50" }
         ],
         "sell": 1,
         "yields": 1,
-        "type": "Piezas"
+        "type": "Piezas",
+        "sellCost":110
     }
 ]
 }

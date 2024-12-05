@@ -37,7 +37,7 @@
     "name": "platano",
     "price": 20,
     "quantity": 5,
-    "stock": 2,
+    "stock": 0,
     "type": "piezas",
     "provider": "Alsuper",
     "expirationDate": "2024-11-10",
@@ -334,7 +334,7 @@
     "stock": 80,
     "type": "piezas",
     "provider": "Sams",
-    "expirationDate": "2025-01-01",
+    "expirationDate": "2024-12-08",
     "minimumQuantity": 1
   }
 ]

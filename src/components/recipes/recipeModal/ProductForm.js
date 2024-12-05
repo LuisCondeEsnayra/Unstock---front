@@ -4,8 +4,7 @@ import MeasureDropdown from "./MeasureDropdown"; // Assuming MeasureDropdown is 
 
 const ProductForm = ({ checkCompletion, setProductData, productData }) => {
   const [productName, setProductName] = useState(productData.productName || "");
-  const [cost, setCost] = useState(productData.cost || "");
-  const [sellQuantity, setSellQuantity] = useState(productData.sellQuantity || "");
+ const [sellQuantity, setSellQuantity] = useState(productData.sellQuantity || "");
   const [yieldRecipe, setYieldRecipe] = useState(productData.yieldRecipe || "");
   const [image, setImage] = useState(productData.image || "");
   const [recipe, setRecipe] = useState(productData.recipe || "");
@@ -16,7 +15,6 @@ const ProductForm = ({ checkCompletion, setProductData, productData }) => {
   const handleInputChange = () => {
     const newProductData = {
       productName,
-      cost,
       sellQuantity,
       yieldRecipe,
       image,
@@ -30,7 +28,7 @@ const ProductForm = ({ checkCompletion, setProductData, productData }) => {
 
   useEffect(() => {
     handleInputChange(); // On initial render or any change, update the parent
-  }, [productName, cost, sellQuantity, yieldRecipe, image, recipe, sellCost, type]);
+  }, [productName, sellQuantity, yieldRecipe, image, recipe, sellCost, type]);
 
   return (
     <CRow>
@@ -77,18 +75,7 @@ const ProductForm = ({ checkCompletion, setProductData, productData }) => {
           </CCol>
         </CRow>
 
-        {/* Sell Cost */}
-        <CFormLabel htmlFor="cost">Costo</CFormLabel>
-        <CFormInput
-          type="number"
-          id="cost"
-          value={cost}
-          min={0}
-          onChange={(e) => setCost(e.target.value)}
-          placeholder="Costo"
-          className="mb-3"
-        />
-      </CCol>
+     </CCol>
 
       <CCol>
         {/* Yield of Recipe */}
